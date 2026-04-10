@@ -1,5 +1,5 @@
 import java.util.Scanner;
-// Dummy commit 3 // Dummy commit 4 // Dummy commit 5 // Dummy commit 6
+
 public class Main {
 
     public static void main(String[] args) {
@@ -21,16 +21,21 @@ public class Main {
         String message = login.registerUser(username, password, phone);
         System.out.println(message);
 
-        System.out.println("\n=== Login ===");
+        // Only continue to login if registration is successful
+        if (message.equals("User successfully registered.")) {
 
-        System.out.print("Enter username: ");
-        String user = input.nextLine();
+            System.out.println("\n=== Login ===");
 
-        System.out.print("Enter password: ");
-        String pass = input.nextLine();
+            System.out.print("Enter username: ");
+            String user = input.nextLine();
 
-        boolean status = login.loginUser(user, pass);
-        System.out.println(login.returnLoginStatus(status));
+            System.out.print("Enter password: ");
+            String pass = input.nextLine();
+
+            boolean status = login.loginUser(user, pass);
+            System.out.println(login.returnLoginStatus(status));
+        }
+
+        input.close();
     }
 }
-// first commit test
